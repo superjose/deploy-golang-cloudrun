@@ -1,0 +1,51 @@
+# https://cloud.google.com/iam/docs/creating-custom-roles#creating
+# Yaml to define the Pulumi GCP Roles that need to be created with gcloud CLI
+title: Pulumi GCP Roles
+description: |
+  This policy ensures that all GCP roles are created using Pulumi.
+stage: GA
+# https://cloud.google.com/iam/docs/permissions-reference
+includedPermissions:
+  - serviceusage.services.list
+  - serviceusage.services.enable
+  - serviceusage.services.disable
+  - serviceusage.services.get
+  - serviceusage.services.use
+  # Service Account Permissions
+  - iam.serviceAccounts.create
+  - iam.serviceAccounts.delete
+  - iam.serviceAccounts.disable
+  - iam.serviceAccounts.enable
+  - iam.serviceAccounts.getIamPolicy
+  - iam.serviceAccounts.list
+  - iam.serviceAccounts.setIamPolicy
+  - iam.serviceAccounts.undelete
+  - iam.serviceAccounts.update
+  - resourcemanager.projects.get
+    # Permissions for GCR
+  - storage.objects.create
+  - storage.objects.delete # Optional: only include if you need to delete images
+  - storage.objects.get
+  # Permissions for Google Artifact Registry
+  - artifactregistry.repositories.create
+  - artifactregistry.repositories.delete
+  - artifactregistry.repositories.get
+  - artifactregistry.repositories.list
+  - artifactregistry.repositories.update
+  - artifactregistry.repositories.downloadArtifacts
+  - artifactregistry.repositories.uploadArtifacts
+  - artifactregistry.repositories.deleteArtifacts
+  # Permissions
+  # Permissions
+  - run.services.create
+  - run.services.get
+  - run.services.list
+  - run.services.update
+  - run.services.delete
+  - run.services.getIamPolicy
+  - run.services.setIamPolicy
+  - iam.serviceAccounts.actAs
+# NOTE: This should be removed the first time you're creating a role.
+# This etag is to update the current active role (As GCP lets you manage multiple roles)
+# I'm commenting it out so I can always replace the role
+# etag: BwYS74Xx5y4=

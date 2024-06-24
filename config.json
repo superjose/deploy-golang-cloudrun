@@ -1,0 +1,21 @@
+{
+  "project_name": "gcp-project-name",
+  "project_description": "A Pulumi Project Used to Deploy a Golang application",
+  "project_stack": "dev",
+  "project_language": "go",
+  "gcp_project_id": "",
+  "gcp_service_account_name": "pulumi-gcp",
+  "gcp_service_account_display_name": "Pulumi Service Account",
+  "gcp_service_account_description": "Service Account for Pulumi GCP",
+  "gcp_pulumi_service_account_key_path": "~/keys/gcp/gcp-project-pulumi-service-account-key-file.json",
+  "gcp_pulumi_admin_role_name": "pulumi_admin_role",
+  "gcp_docker_image_name": "my-docker-name",
+  "gcp_artifact_registry_service_name": "artifact-registry-api",
+  "gcp_artifact_registry_repository_name": "my-repo",
+  "gcp_cloud_run_admin_service_name": "cloud-run-admin-service",
+  "gcp_cloud_run_service_name": "cloud-run-service",
+  "gcp_location": "us-east1",
+  "gcp_image_tag": "latest",
+  "dockerfile_relative_path": "./app/",
+  "pulumi_relative_path": "./pulumi/"
+}
